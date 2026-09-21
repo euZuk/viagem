@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Calcule o custo de combustível da sua viagem de forma rápida e clara.">
+	<title>Rota Certa | Calculadora de viagem</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main class="page-shell">
+		<section class="calculator-card" aria-labelledby="page-title">
+			<h1 id="page-title">Calculadora de viagem</h1>
+
+			<form id="trip-form" novalidate>
+				<div class="form-grid">
+					<label class="field field-wide" for="distance">
+						<span class="field-label">Distância da viagem</span>
+						<span class="input-wrap">
+							<input id="distance" name="distance" type="number" min="0.1" step="0.1" placeholder="Digite a distância da Viagem" inputmode="decimal" required>
+							<span class="unit">km</span>
+						</span>
+						<span class="field-error" data-error-for="distance"></span>
+					</label>
+
+					<label class="field" for="consumption">
+						<span class="field-label">Consumo médio</span>
+						<span class="input-wrap">
+							<input id="consumption" name="consumption" type="number" min="0.1" step="0.1" placeholder="Digite o consumo do Veiculo" inputmode="decimal" required>
+							<span class="unit">km/L</span>
+						</span>
+						<span class="field-error" data-error-for="consumption"></span>
+					</label>
+
+					<label class="field" for="fuel-price">
+						<span class="field-label">Preço do combustível</span>
+						<span class="input-wrap">
+							<span class="prefix">R$</span>
+							<input id="fuel-price" name="fuel-price" type="number" min="0.01" step="0.01" placeholder="Digite o Preço do Combustivel" inputmode="decimal" required>
+							<span class="unit">/L</span>
+						</span>
+						<span class="field-error" data-error-for="fuel-price"></span>
+					</label>
+				</div>
+
+				<div class="actions">
+					<button class="calculate-button" type="submit">
+						<span>Calcular</span>
+					</button>
+						<button class="clear-button" id="clear-button" type="button">Limpar</button>
+				</div>
+			</form>
+
+			<section class="result-panel" id="result-panel" aria-live="polite" aria-atomic="true">
+				<div class="result-copy">
+					<strong id="result-value">R$ 0,00</strong>
+						<span class="result-note" id="result-note">Informe os dados para calcular.</span>
+				</div>
+			</section>
+
+			<div class="formula-line">
+				<span class="formula">Formula = (distancia/consumo)*preço</span>
+			</div>
+		</section>
+
+	</main>
+
+	<script src="js/app.js"></script>
+</body>
+</html>
+
